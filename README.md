@@ -59,8 +59,18 @@ PostgreSQL Database
 
 
 ## Screenshots
+
 Dashboard Screenshot
 
 Ticket List Screenshot
 
 AI Analysis Screenshot
+
+
+## Related Repositories
+
+* Frontend:
+https://github.com/chloehuang2021/opsiq-ticket-triage
+
+* Backend:
+https://github.com/chloehuang2021/opsiq-ticket-triage-backend
