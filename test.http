@@ -1,0 +1,70 @@
+POST http://localhost:8080/api/tickets
+Content-Type: application/json
+
+{
+  "title": "Database timeout",
+  "description": "Users report slow query performance after migration",
+  "department": "Permits",
+  "status": "OPEN",
+  "category": "Database",
+  "priority": "HIGH",
+  "summary": "Query performance degradation after migration deployment.",
+  "suggestedSteps": "Review indexes and database execution plans."
+}
+
+
+###
+GET http://localhost:8080/api/tickets
+
+
+###
+GET http://localhost:8080/api/tickets/1
+
+###
+DELETE http://localhost:8080/api/tickets/17
+
+
+
+###
+PATCH http://localhost:8080/api/tickets/1/status
+Content-Type: application/json
+
+{
+  "status": "IN_PROGRESS"
+}
+
+###
+DELETE http://localhost:8080/api/tickets/1
+
+###
+POST http://localhost:8080/api/tickets/analyze
+Content-Type: application/json
+
+{
+  "title": "Database timeout",
+  "description": "Users report slow query performance after migration",
+  "department": "Permits",
+  "status": "OPEN"
+}
+
+###
+POST http://localhost:8080/api/tickets/analyze
+Content-Type: application/json
+
+{
+  "title": "User cannot login",
+  "description": "Employee reports access denied after password reset",
+  "department": "HR",
+  "status": "OPEN"
+}
+
+###
+POST http://localhost:8080/api/tickets/analyze
+Content-Type: application/json
+
+{
+  "title": "Dashboard report failed",
+  "description": "Finance dashboard did not refresh after ETL job",
+  "department": "Finance",
+  "status": "OPEN"
+}
