@@ -2,6 +2,18 @@
 
 A full-stack ticket management application with AI-powered ticket analysis, built using Angular, Spring Boot, and PostgreSQL.
 
+Live Demo:
+https://xxxxx
+
+## Related Repositories
+
+* Frontend:
+https://github.com/chloehuang2021/opsiq-ticket-triage
+
+* Backend:
+https://github.com/chloehuang2021/opsiq-ticket-triage-backend
+
+
 ## Features
 
 * AI-powered ticket analysis and categorization
