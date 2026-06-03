@@ -12,7 +12,7 @@ https://youtu.be/LJh7dDF6jPY
 
 ## Screenshots
 
-#### * AI Analysis Screenshot
+* AI Analysis Screenshot
   
 <img width="1988" height="1186" alt="image" src="https://github.com/user-attachments/assets/19882878-fe8c-4ad4-ae9a-1b6da727119e" />
 
