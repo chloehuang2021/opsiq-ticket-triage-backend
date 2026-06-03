@@ -12,11 +12,11 @@ https://youtu.be/LJh7dDF6jPY
 
 ## Screenshots
 
-#### ◾️ AI Analysis Screenshot
+*** AI Analysis Screenshot ***
   
 <img width="1988" height="1186" alt="image" src="https://github.com/user-attachments/assets/19882878-fe8c-4ad4-ae9a-1b6da727119e" />
 
-#### ◾️ Dashboard Screenshot
+*** Dashboard Screenshot ***
   
 <img width="1252" height="268" alt="image" src="https://github.com/user-attachments/assets/2a1351e0-cd8d-403f-a498-5173ff118359" />
 
