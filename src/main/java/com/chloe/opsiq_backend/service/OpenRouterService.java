@@ -1,9 +1,14 @@
 package com.chloe.opsiq_backend.service;
 
+import com.chloe.opsiq_backend.dto.AiAnalysisResponse;
 import com.chloe.opsiq_backend.model.ChatCompletionResponse;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClient;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.chloe.opsiq_backend.dto.AiAnalysisResponse;
+
 
 @Service
 public class OpenRouterService {
@@ -12,6 +17,14 @@ public class OpenRouterService {
     private String apiKey;
 
     private final RestClient restClient = RestClient.create();
+
+    // Spring manages a shared ObjectMapper, so reuse it instead of creating our own.
+    private final ObjectMapper objectMapper;
+
+    public OpenRouterService(ObjectMapper objectMapper) {
+        this.objectMapper = objectMapper;
+    }
+
 
     //To check the connection of API
     public String testConnection() {
@@ -44,7 +57,7 @@ public class OpenRouterService {
     }
 
 
-    public String analyzeTicket(String title, String description) {
+    public AiAnalysisResponse analyzeTicket(String title, String description) {
 
         String prompt = """
         You are an experienced IT service desk analyst.
@@ -100,7 +113,14 @@ public class OpenRouterService {
                 .getMessage()
                 .getContent();
 
-        return normalizeJsonResponse(content);
+        String normalizedContent = normalizeJsonResponse(content);
+
+        try {
+            return objectMapper.readValue(normalizedContent, AiAnalysisResponse.class);
+        } catch (JsonProcessingException ex) {
+            // Fail fast because the frontend depends on a predictable response contract.
+            throw new IllegalStateException("AI returned an invalid ticket analysis response.", ex);
+        }
     }
 
 

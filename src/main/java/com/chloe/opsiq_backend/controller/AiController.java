@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import com.chloe.opsiq_backend.dto.AiAnalysisResponse;
+
 
 
 @RestController
@@ -25,7 +27,7 @@ public class AiController {
     }
 
     @GetMapping("/analyze-test")
-    public String analyzeTest() {
+    public AiAnalysisResponse analyzeTest() {
         // Hard-coded input keeps prompt tuning independent from frontend readiness.
         return openRouterService.analyzeTicket(
                 "User cannot login to payroll system",
@@ -34,7 +36,7 @@ public class AiController {
     }
 
     @PostMapping("/analyze")
-    public String analyzeTicket(@RequestBody AiAnalysisRequest request) {
+    public AiAnalysisResponse analyzeTicket(@RequestBody AiAnalysisRequest request) {
         return openRouterService.analyzeTicket(
                 request.title(),
                 request.description()
