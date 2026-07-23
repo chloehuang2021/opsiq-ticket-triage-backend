@@ -10,7 +10,11 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/tickets")
-@CrossOrigin(origins = "http://localhost:4200")
+//Local & production frontend
+@CrossOrigin(origins = {
+        "http://localhost:4200",
+        "https://opsiq-ticket-triage.onrender.com"
+})
 public class TicketController {
 
     private final TicketRepository ticketRepository;
