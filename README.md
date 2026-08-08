@@ -1,6 +1,10 @@
 # OpsIQ AI Ticket Triage
 
-A full-stack ticket management application with AI-powered functions that automatically categorize support requests, assign priorities, generate concise summaries, and recommend troubleshooting steps.
+A full-stack ticket management application with AI-powered functions that automatically categorize requests, assign priorities, generate summaries, show status, suggest troubleshooting steps, and show ticket created time & last updated time.
+Incoming support requests are automatically analyzed using AI (Large Language Model / LLM). All ticket information are stored in PostgreSQL.
+
+The application demonstrates full-stack development, REST API design, AI/LLM integration, containerization, and cloud deployment.
+
 
 Built with Angular, Spring Boot, PostgreSQL, Docker, and OpenRouter.
 
@@ -13,35 +17,38 @@ Built with Angular, Spring Boot, PostgreSQL, Docker, and OpenRouter.
 ![OpenRouter](https://img.shields.io/badge/OpenRouter-AI-7C3AED)
 
 
+
+
+
 ## Live Demo
 
-- **Frontend:** https://your-frontend-url.onrender.com
-- **Backend API:** https://your-backend-url.onrender.com
-- Demo Video: https://youtu.be/LJh7dDF6jPY
+- **Frontend:** https://opsiq-ticket-triage.onrender.com
+- **Backend API:** https://opsiq-ticket-triage-backend.onrender.com
+- **Demo Video:** https://youtu.be/LJh7dDF6jPY
 
-## Source Code
 
-| Component | Repository |
+## Repositories
+
+| Component | Technology | Repository |
+|-----------|------------|------------|
+| Frontend | Angular | https://github.com/chloehuang2021/opsiq-ticket-triage |
+| Backend | Spring Boot | https://github.com/chloehuang2021/opsiq-ticket-triage-backend |
+
+
+
+## Tech Stack
+
+
+| Category | Technology |
 |----------|------------|
-| Frontend (Angular) | https://github.com/yourusername/opsiq-ticket-triage-frontend |
-| Backend (Spring Boot) | https://github.com/yourusername/opsiq-ticket-triage-backend |
+| Frontend | Angular, TypeScript, HTML, CSS |
+| Backend | Spring Boot, Java, RESTful API |
+| Database | PostgreSQL, Spring Data JPA |
+| Containerization | Docker, Docker Compose |
+| AI Integration | OpenRouter API, DeepSeek Chat V3 |
+| Deployment | Render |
+| Version Control | Git, GitHub |
 
-
-
-## Overview
-
-OpsIQ simulates a modern enterprise IT ticketing system.
-Incoming support requests are automatically analyzed using an LLM, categorized, prioritized, summarized, and enriched with suggested troubleshooting steps before being stored in PostgreSQL.
-The application demonstrates full-stack development, REST API design, AI integration, containerization, and cloud deployment.
-
-
-## Related Repositories
-
-* Frontend:
-https://github.com/chloehuang2021/opsiq-ticket-triage
-
-* Backend:
-https://github.com/chloehuang2021/opsiq-ticket-triage-backend
 
 ## Features
 
@@ -89,26 +96,36 @@ https://github.com/chloehuang2021/opsiq-ticket-triage-backend
 
 
 ## Screenshots
-#### Before Creating a Ticket
+#### Default View
 <img width="2880" height="1806" alt="New UI Overview" src="https://github.com/user-attachments/assets/aecbe6f1-aabd-411a-a17e-2a3f49c3422e" />
 
 
 
-#### How to Create a New Ticket 
+#### Create Ticket
 
-<img width="2876" height="1802" alt="ticket preview 1 After evening" src="https://github.com/user-attachments/assets/3d9949d8-5f77-4569-97e7-9e31e7d36f18" />
+<img width="2880" height="1806" alt="New UI new ticket" src="https://github.com/user-attachments/assets/4e26e849-154a-44df-8250-d062bacc77ad" />
+
+#### Right After Creating a Ticket
+<img width="2880" height="1808" alt="New UI new ticket after saved" src="https://github.com/user-attachments/assets/6007f566-66b2-4f54-9eff-a580f516903e" />
+
 
 
 
 #### AI Analysis 
+<img width="2880" height="1600" alt="New UI AI Analysis" src="https://github.com/user-attachments/assets/1ae711d9-48c7-4bfb-bbdf-c8e76c8235cd" />
 
-<img width="2876" height="1806" alt="ticket preview 2 After evening" src="https://github.com/user-attachments/assets/73610e0f-4970-431d-af02-710a38953863" />
+
+
+
+
 
 #### Dashboard 
 
+<img width="2688" height="590" alt="New UI Dashboard" src="https://github.com/user-attachments/assets/ec521ae6-170a-4b86-b89f-06b3253eb140" />
 
-<img width="936" height="198" alt="Dashboard" src="https://github.com/user-attachments/assets/85b705b5-0ead-4e81-ba72-614dad96ca07" />
+#### Saved Tickets
 
+<img width="2880" height="1804" alt="New UI Saved Tickets" src="https://github.com/user-attachments/assets/9de988e4-46ff-4c1c-8f4c-45247dc6ceef" />
 
 
 
@@ -207,20 +224,6 @@ docker compose down
 - One-command local deployment
 
 
-## Tech Stack
-
-
-| Category | Technology |
-|----------|------------|
-| Frontend | Angular, TypeScript, HTML, CSS |
-| Backend | Spring Boot, Java, RESTful API |
-| Database | PostgreSQL, Spring Data JPA |
-| Containerization | Docker, Docker Compose |
-| AI Integration | OpenRouter API, DeepSeek Chat V3 |
-| Deployment | Render |
-| Version Control | Git, GitHub |
-
-
 
 ### Deployment
 
@@ -256,7 +259,6 @@ docker compose down
 
 ## Future Enhancements
 
-- Integrate a production-grade LLM for enhanced ticket analysis
 - Containerize the Angular frontend
 - Deploy the application to AWS
 - Implement a CI/CD pipeline
@@ -269,5 +271,4 @@ docker compose down
 ## Author
 
 Weiyi "Chloe" Huang
-
 
