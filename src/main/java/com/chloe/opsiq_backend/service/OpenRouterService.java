@@ -31,7 +31,7 @@ public class OpenRouterService {
 
         String requestBody = """
                 {
-                  "model": "deepseek/deepseek-chat-v3-0324",
+                  "model": "openai/gpt-5-nano",
                   "messages": [
                     {
                       "role": "user",
@@ -40,6 +40,8 @@ public class OpenRouterService {
                   ]
                 }
                 """;
+
+
 
         ChatCompletionResponse response = restClient.post()
                 .uri("https://openrouter.ai/api/v1/chat/completions")
@@ -89,8 +91,8 @@ public class OpenRouterService {
 
         String requestBody = """
                 {
-                  "model": "deepseek/deepseek-chat-v3-0324",
-                  "max_tokens": 500,
+                  "model": "openai/gpt-5-nano",
+                  "max_tokens": 2000,
                   "messages": [
                     {
                       "role": "user",
@@ -100,6 +102,27 @@ public class OpenRouterService {
                 }
                 """.formatted(toJsonString(prompt));
 
+
+
+
+
+        ChatCompletionResponse response;
+
+        try {
+            response = restClient.post()
+                    .uri("https://openrouter.ai/api/v1/chat/completions")
+                    .header("Authorization", "Bearer " + apiKey)
+                    .header("Content-Type", "application/json")
+                    .body(requestBody)
+                    .retrieve()
+                    .body(ChatCompletionResponse.class);
+
+        } catch (Exception ex) {
+            System.err.println("OPENROUTER ERROR:");
+            ex.printStackTrace();
+            throw ex;
+        }
+        /**
         ChatCompletionResponse response = restClient.post()
                 .uri("https://openrouter.ai/api/v1/chat/completions")
                 .header("Authorization", "Bearer " + apiKey)
@@ -107,12 +130,21 @@ public class OpenRouterService {
                 .body(requestBody)
                 .retrieve()
                 .body(ChatCompletionResponse.class);
+**/
+
+
+
+
+
+
 
         String content = response.getChoices()
                 .get(0)
                 .getMessage()
                 .getContent();
 
+        System.out.println("AI RAW RESPONSE: " + content);
+        
         String normalizedContent = normalizeJsonResponse(content);
 
         try {
