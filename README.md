@@ -19,7 +19,6 @@ Built with Angular, Spring Boot, PostgreSQL, Docker, and OpenRouter.
 
 
 
-
 ## Live Demo
 
 - **Frontend:** https://opsiq-ticket-triage.onrender.com
