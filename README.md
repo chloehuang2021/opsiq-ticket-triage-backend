@@ -85,10 +85,7 @@ Built with Angular, Spring Boot, PostgreSQL, Docker, and OpenRouter.
 
 ## Architecture
 
-
-<img width="1774" height="887" alt="Architecture" src="https://github.com/user-attachments/assets/5525a53c-d9b7-406e-bdad-609d64e8f669" />
-
-
+<img width="1774" height="887" alt="Angular Ticketing Architecture with GPT-5 nano" src="https://github.com/user-attachments/assets/da43d709-79db-4323-adf4-b795962dd51f" />
 
 
 
